@@ -1,0 +1,24 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.5
+pydantic-settings==2.7.1
+
+# Spotify Integration
+spotipy==2.24.0
+
+# Machine Learning & Data (pre-built wheels for Python 3.13)
+scikit-learn==1.6.1
+numpy==2.2.1
+pandas==2.2.3
+scipy==1.15.1
+
+# Authentication & Security
+PyJWT==2.8.0
+python-dotenv==1.0.0
+passlib[bcrypt]==1.7.4
+
+# HTTP Client
+httpx==0.26.0
+
+# CORS
+python-multipart==0.0.6
