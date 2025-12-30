@@ -377,9 +377,9 @@ export default function Dashboard() {
                         <button
                             key={item.id}
                             onClick={() => switchToSection(item.id)}
-                            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 cursor-pointer ${activeSection === item.id
-                                ? 'bg-violet-600 text-white shadow-lg shadow-violet-600/30'
-                                : 'text-slate-400 hover:bg-white/5 hover:text-white'
+                            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 cursor-pointer border ${activeSection === item.id
+                                ? 'bg-violet-500/10 border-violet-500/50 text-white shadow-[0_0_15px_rgba(139,92,246,0.3)]'
+                                : 'border-transparent text-slate-400 hover:bg-violet-500/05 hover:border-violet-500/20 hover:text-white hover:shadow-[0_0_10px_rgba(139,92,246,0.1)]'
                                 }`}
                         >
                             <item.icon className="w-5 h-5" />
@@ -394,7 +394,7 @@ export default function Dashboard() {
                         {user?.profile_image ? (
                             <img src={user.profile_image} alt="Profile" className="w-10 h-10 rounded-full border-2 border-violet-500/30" />
                         ) : (
-                            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-violet-500 to-indigo-500 flex items-center justify-center">
+                            <div className="w-10 h-10 rounded-full bg-violet-500 flex items-center justify-center">
                                 <UserIcon className="w-5 h-5 text-white" />
                             </div>
                         )}

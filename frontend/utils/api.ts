@@ -78,7 +78,8 @@ export const tokenManager = {
 export const auth = {
     /* Redirect to Spotify login */
     login: (): void => {
-        window.location.href = 'http://localhost:8000/auth/login';
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+        window.location.href = `${apiUrl}/auth/login`;
     },
 
     /* Logout user */
