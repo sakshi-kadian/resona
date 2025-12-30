@@ -1,10 +1,10 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { tokenManager } from '@/utils/api';
 
-export default function AuthCallback() {
+function AuthContent() {
     const searchParams = useSearchParams();
     const router = useRouter();
 
@@ -48,5 +48,17 @@ export default function AuthCallback() {
                 <p className="text-purple-300/60 text-xl animate-pulse">Analyzing your resonance...</p>
             </div>
         </div>
+    );
+}
+
+export default function AuthCallback() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen bg-slate-950 flex items-center justify-center text-white">
+                Loading...
+            </div>
+        }>
+            <AuthContent />
+        </Suspense>
     );
 }
